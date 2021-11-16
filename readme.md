@@ -1,5 +1,8 @@
-# Running the Model
-> You will need to consider making changes to the model in order for it to function properly
+# Getting Started With Computer Vision on an Rpi
+> This repo just holds some sandboxed src code for messing around with opencv, torchvision, and tensorflow. 
+
+### Using Models
+*You will need to consider making changes to the model in order for it to function properly*
 
 ### Data
 1. Make sure to change change the data directory.
