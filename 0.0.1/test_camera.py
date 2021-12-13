@@ -3,7 +3,7 @@ import picamera.array
 import time
 import cv2
 
-with picamera.Picamera as cam:
+with picamera.PiCamera() as cam:
 	rawCap=picamera.array.PiRGBArray(cam)
 	cam.start_preview()
 	time.sleep(3)
