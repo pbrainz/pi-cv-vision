@@ -13,7 +13,7 @@ Press 'Esc' to stop the cature.
 
 Example will result in: 
 
-/home/pi/out/dev.test_vid
+/home/pi/out/test_vid.mp4
 640x480 resolution
 25 fps
 ```
