@@ -9,7 +9,7 @@ sudo apt install -fy git python3 python3-dev \
                      python3-matplotlib python3-pandas \
                      python3-nose python3-tk python3-opencv
 
-pip3 install argparse imutils
+pip3 install argparse imutils tqdm
 
 echo -e "\n\n\n Testing OpenCV \n\n\n"
 

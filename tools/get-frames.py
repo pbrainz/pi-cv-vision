@@ -1,11 +1,11 @@
 import cv2
 import time
 import argparse
+from tqdm import tqdm
 
 #--------------------------------------------------
 #                     Arguments
 #--------------------------------------------------
-
 all_args = argparse.ArgumentParser()
 all_args.add_argument("-v", "--video", required=True,
    help="video file")
@@ -20,22 +20,17 @@ vc = cv2.VideoCapture(v)
 #--------------------------------------------------
 #             Calculate Num of Frames
 #--------------------------------------------------
-
+print("Setting up...")
 num_fr = int(vc.get(cv2.CAP_PROP_FRAME_COUNT))
-
+print("Starting Render...")
 #--------------------------------------------------
 #                 Export Frames
 #--------------------------------------------------
-time.sleep(3)
-y,img = vc.read()
-num_fr-=1
-i = 0
-while y:
-  cv2.imwrite(outd+"%d.jpg" % i, img)  
-  y,img = vc.read()
-  print("Rendered: "+str(i)+" | Queued: "+str(num_fr))
-  i += 1
-  num_fr-=1
+check, img = vc.read()
+for fn in tqdm(range(0, num_fr), desc ="Rendering Frames"):
+  cv2.imwrite(outd+"%d.jpg" % fn, img)  
+  check, img = vc.read()
+  fn += 1
 
 vc.release()
 cv2.destroyAllWindows()
