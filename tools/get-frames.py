@@ -15,20 +15,27 @@ args = vars(all_args.parse_args())
 
 v = str(args['video'])
 outd = str(args['outdir'])
+vc = cv2.VideoCapture(v)
+
+#--------------------------------------------------
+#             Calculate Num of Frames
+#--------------------------------------------------
+
+num_fr = int(vc.get(cv2.CAP_PROP_FRAME_COUNT))
 
 #--------------------------------------------------
 #                 Export Frames
 #--------------------------------------------------
-
 time.sleep(3)
-vc = cv2.VideoCapture(v)
-success,image = vc.read()
+y,img = vc.read()
+num_fr-=1
 i = 0
-while success:
-  cv2.imwrite(outd+"%d.jpg" % str(i), image)  
-  success,image = vc.read()
-  print('Rendered Frame: '+str(i), success)
+while y:
+  cv2.imwrite(outd+"%d.jpg" % i, img)  
+  y,img = vc.read()
+  print("Rendered: "+str(i)+" | Queued: "+str(num_fr))
   i += 1
+  num_fr-=1
 
 vc.release()
 cv2.destroyAllWindows()
