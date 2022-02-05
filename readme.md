@@ -28,7 +28,7 @@ sudo su && bash setup.sh
 - right click *pi-cv-vision-main* folder and open in terminal
 - run the following command:
 ```
-cd 0.0.1/ && ls
+cd testing_scripts && ls
 ```
 - to run any of the python scripts, run the following command
 ```
