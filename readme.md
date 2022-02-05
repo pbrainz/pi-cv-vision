@@ -10,7 +10,8 @@
 - go to downloadeds folder in file explorer
 - right click the zip file and choose *extract here*
 - right click newly created folder, and select open in terminal
-- run the following command (this will take a while, maybe 30 min):
+- run the following command (this will take a very long time):
+- in addition, answer "y" to the update prompt
 
 ```
 sudo su && bash setup.sh
