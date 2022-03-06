@@ -1,7 +1,7 @@
 import cv2
 import sys
 
-vidfile="videos/chaplin.mp4"
+vidfile="videos/videofile.mp4"
 
 (major_ver, minor_ver, subminor_ver) = (cv2.__version__).split('.')
 
@@ -90,6 +90,6 @@ if __name__ == '__main__' :
         # Display result
         cv2.imshow("Tracking", frame)
 
-        # Exit if ESC pressed
+        # click on the pop-up camera window and press 'ESC'
         k = cv2.waitKey(1) & 0xff
         if k == 27 : break

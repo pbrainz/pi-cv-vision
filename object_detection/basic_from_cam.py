@@ -15,21 +15,24 @@ Author:
  
 from __future__ import print_function # Python 2/3 compatibility
 import cv2 # Import the OpenCV library
-import numpy as np # Import Numpy library
+import numpy as np
+from zmq import device # Import Numpy library
  
 # Project: Object Tracking
 # Author: Addison Sears-Collins 
 # Website: https://automaticaddison.com
 # Date created: 06/13/2020
 # Python version: 3.7
- 
+
+cam_device = 0 
+
 def main():
     """
     Main method of the program.
     """
  
     # Create a VideoCapture object
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(cam_device)
  
     # Create the background subtractor object
     # Use the last 700 video frames to build the background
